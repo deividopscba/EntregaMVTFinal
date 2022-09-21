@@ -1,0 +1,43 @@
+.contenido1{
+    position: relative;
+    top: 60px;
+    border: 1px  solid royalblue
+}
+
+.contenidoPacientes{
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px
+}
+
+.formDataPacientes{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 20px;
+    background-color: azure;
+    border-radius: 5px;
+    padding: 20px;
+    color: blue;
+}
+
+.contenidoMedicos{
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px
+}
+
+.formDataMedicos{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    gap: 20px;
+    background-color: azure;
+    border-radius: 5px;
+    padding: 20px;
+    color: yellowgreen;
+}
