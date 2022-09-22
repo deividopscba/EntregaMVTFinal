@@ -3,6 +3,7 @@ from BaseDeDatos.views import *
 
 urlpatterns = [
     path('inicio/', inicio),
-    path('pacientes/', Pacientes),
-    path('medicos/', Medicos),
+    path('pacientes/', pacientes),
+    path('medicos/', medicos),
+    path('api_pacientes/', api_pacientes)
 ]

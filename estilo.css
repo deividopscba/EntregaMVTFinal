@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+}
+header .navbar {
+  background-color: rgb(68, 86, 226) !important;
+}
+header .navbar .collapse {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-around !important;
+}
+header .navbar .collapse .navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+body .contenido1 h1 {
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=estilo.css.map */

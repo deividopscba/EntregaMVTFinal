@@ -11,6 +11,7 @@ class Paciente(models.Model):
     ciudad = models.CharField(max_length=40)
     email = models.EmailField()
 
+
 class Medico(models.Model):
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)

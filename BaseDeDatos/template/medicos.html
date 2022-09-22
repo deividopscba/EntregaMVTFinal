@@ -1,21 +1,21 @@
-{% extends "inicio.html" %}
+{% extends "padre.html" %}
 
 {% load static %}
     <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
     <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
 {% block contenido %}
-    <p>Base de datos de medicos</p>
+    <h2>Base de datos de medicos</h2>
     <div class="contenidoMedicos">
         <form class="formDataMedicos" action="/BaseDeDatos/medicos/" method="POST"> {% csrf_token %}
             <input type="text" name = "Nombre" placeholder="Nombre">
             <input type="text" name = "Apellido" placeholder="Apellido">
             <input type="number" name = "Edad" placeholder="Edad">
             <input type="date" name = "Fecha de nacimiento" placeholder="Fecha de nacimiento">
-            <input type="number" name = "ID" placeholder="ID">
+            <input type="number" name = "ID" placeholder="Matricula">
             <input type="text" name = "Direccion" placeholder="Direccion">
             <input type="text" name = "Ciudad" placeholder="Ciudad">
             <input type="email" name = "Email" placeholder="Email">
-            <input type="text" name = "Profesion" placeholder="Profesion">
+            <input type="text" name = "Profesion" placeholder="Especialidad">
             <button type="submit" class="btn btn-primary btndj">Registrar</button>
         </form>
     </div>

@@ -8,19 +8,26 @@ from BaseDeDatos.forms import form_pacientes, form_medicos
 def inicio(request):
     return render(request, "inicio.html")
 
-def Pacientes(request):
+def pacientes(request):
+    if request.method == "POST":
+        paciente = Paciente(nombre = request.POST['nombre'], apellido=request.POST['apellido'], edad=request.POST['edad'], fechadenacimiento=request.POST['fechadenacimiento'], id=request.POST['id'], direccion=request.POST['direccion'],ciudad=request.POST['ciudad'], email=request.POST['email'])
+        paciente.save()
+        return render(request, "inicio.html")
+    return render(request, 'pacientes.html')
+
+
+
+def api_pacientes(request):
     if request.method == "POST":
         formulario = form_pacientes(request.POST)
         if formulario.is_valid():
             informacion = formulario.cleaned_data
-            paciente = Paciente(nombre=informacion['nombre'], apellido=informacion['apellido'], edad=informacion['edad'], 
-                fechadenacimiento=informacion['fechadenacimiento'], id=informacion['id'], direccion=informacion['direccion'], 
-                ciudad=informacion['ciudad'], email=informacion['email'])
+            paciente = Paciente(nombre=informacion['nombre'], apellido=informacion['apellido'], edad=informacion['edad'],fechadenacimiento=informacion['fechadenacimiento'], id=informacion['id'], direccion=informacion['direccion'], ciudad=informacion['ciudad'], email=informacion['email'])
             paciente.save()
-            return render(request, "pacientes.html")
+            return render(request, "api_pacientes.html")
     else:
         formulario=form_pacientes()
-    return render(request, "pacientes.html", {"formulario": formulario})
+    return render(request, "api_pacientes.html", {"formulario": formulario})
 
 def buscar_paciente(request):
     if request.GET["id"]:
@@ -31,7 +38,7 @@ def buscar_paciente(request):
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
 
-def Medicos(request):
+def medicos(request):
     if request.method == "POST":
         formulario = form_medicos(request.POST)
         if formulario.is_valid():

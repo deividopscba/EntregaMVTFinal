@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from MVT.view import inicio
+from MVT.view import inicio, Pacientes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
     path('BaseDeDatos/', include("BaseDeDatos.urls")),
+    path('pacientes/', Pacientes)
 ]
