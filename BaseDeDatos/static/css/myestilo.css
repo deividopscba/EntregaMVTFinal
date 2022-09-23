@@ -1,9 +1,45 @@
-.contenido1{
-    position: relative;
-    top: 60px;
-    border: 1px  solid royalblue
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
 }
 
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+header .navbar {
+    background-color: rgb(68, 86, 226) !important;
+}
+header .navbar .collapse {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-around !important;
+}
+header .navbar .collapse .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.contenido1{
+    margin-top: 100px;
+    border: 1px  solid royalblue
+}
+.contenido1 p, h1{
+    display: flex;
+    justify-content: center;
+}
+.contenido1 .form1{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25%;
+    padding-right: 25%;
+    justify-content: center;
+}
+.contenido1 form button{
+    display: flex;
+}
 .contenidoPacientes{
     background-color: blueviolet;
     display: flex;

@@ -13,7 +13,7 @@
     {% if formulario.errors %}
     <p style="color:red;">Estan mal los datos, revisar</p>
     {% endif %}
-    <form method="POST">{% csrf_token %}
+    <form  class= "form1" method="POST">{% csrf_token %}
         <table>
             {{ formulario.as_table }}
         </table>

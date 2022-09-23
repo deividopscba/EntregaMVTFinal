@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {%load static%}
     <meta charset="UTF-8">
@@ -9,31 +10,37 @@
     <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
     <title>Base De Datos</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/BaseDeDatos/inicio">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/BaseDeDatos/api_pacientes">Pacientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/BaseDeDatos/api_medicos">Medicos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/BaseDeDatos/api_HistoriasClinica">Historias Clinicas</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/BaseDeDatos/inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/BaseDeDatos/api_pacientes">Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/BaseDeDatos/api_medicos">Medicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/BaseDeDatos/api_HistoriasClinica">Historias Clinicas</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
     <div class="contenido1">
         {% block contenido %}
-            <p>Esta es la base de datos para poder registrar pacientes, medicos e historias clinicas</p>
+        <p>Esta es la base de datos para poder registrar pacientes, medicos e historias clinicas</p>
         {% endblock %}
     </div>
 </body>
+
 </html>
