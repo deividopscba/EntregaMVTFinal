@@ -26,7 +26,7 @@ def buscar_paciente(request):
     if request.GET["id"]:
         id = request.GET["id"]
         pacientes = Paciente.objects.filter(id__icontains = id)
-        return render(request, "buscar_pacientes.html", {"pacientes":pacientes})
+        return render(request, "pacientes.html", {"pacientes":pacientes})
     else:
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
