@@ -11,9 +11,11 @@
     <p style="color: red">Estan mal</p>
     {% endif %}
     <form class="formDataPacientes" action="" method="POST">{% csrf_token %}
-        <table>
-            {{ formulario.as_table }}
-        </table>
+        <input type="number" name = "id_historia" placeholder="id historia">
+        <input type="text" name = "nombre_pac" placeholder="Nombre Paciente">
+        <input type="text" name = "apellido_pac" placeholder="Apellido Paciente">
+        <input type="date" name = "fecha_hist" placeholder="Fecha de Historia">
+        <input type="text" name = "diagnostico" placeholder="diagnostico">
         <button type="submit">Registrar</button>
     </form>
     {% endblock %}
