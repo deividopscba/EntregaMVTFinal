@@ -17,18 +17,26 @@ header .navbar .collapse {
     display: flex !important;
     justify-content: space-around !important;
 }
-header .navbar .collapse .navbar-nav {
+header .navbar .collapse .navbar-nav .nav-item :hover{
+    color: rgb(99, 7, 7);
+}
+    header .navbar .collapse .navbar-nav {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
 .contenido1{
-    margin-top: 100px;
-    border: 1px  solid royalblue
+    margin: 100px 200px;
+    border: 1px  solid royalblue;
 }
 .contenido1 p, h1{
     display: flex;
     justify-content: center;
+}
+.contenido1 .form1 tbody tr{
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
 }
 .contenido1 .form1{
     display: flex;
@@ -39,9 +47,15 @@ header .navbar .collapse .navbar-nav {
 }
 .contenido1 form button{
     display: flex;
+    justify-content: center;
+}
+body{
+    background-color: #f0ffff;
+    display: flex;
+    justify-content: center;
 }
 .contenidoPacientes{
-    background-color: blueviolet;
+    background-color: #f0ffff !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,6 +64,7 @@ header .navbar .collapse .navbar-nav {
 
 .formDataPacientes{
     display: flex;
+    justify-content: center;
     flex-direction: column;
     width: 500px;
     gap: 20px;

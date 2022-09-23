@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def inicio(request):
-    return HttpResponse(f'Hola soy Inicio de MVT')
+    return render(request, 'inicio.html')
