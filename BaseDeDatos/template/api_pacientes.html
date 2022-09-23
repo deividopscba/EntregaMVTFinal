@@ -1,0 +1,29 @@
+{% extends "inicio.html" %}
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de datos Pacientes</title>
+</head>
+<body>
+    <h1>Base de datos Pacientes</h1>
+    {% if formulario.errors %}
+    <p style="color:red;">Estan mal los datos, revisar</p>
+    {% endif %}
+    <form method="POST">{% csrf_token %}
+        <table>
+            {{ formulario.as_table }}
+        </table>
+        <button type="submit">Registrar</button>
+    </form>
+    <div>
+        <form class="formDataPacientes" action="/BaseDeDatos/buscar_paciente/" method="GET">
+            <input type="number" name = "ID" placeholder="ID">
+            <button type="submit" class="btn btn-primary btndj">Buscar</button>
+    </div>
+</body>
+</html>
+{% endblock %}

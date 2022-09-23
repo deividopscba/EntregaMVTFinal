@@ -1,0 +1,31 @@
+{% extends "inicio.html" %}
+{% block contenido %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda de base de datos</title>
+</head>
+<body>
+        <div>
+            {% if medicos %}
+            <ul>
+                {% for medico in medicos %}
+                <li>Nombre: {{medico.nombre}}</li>
+                <li>Apellido: {{medico.apellido}}</li>
+                <li>Edad: {{medico.edad}}</li>
+                <li>Fecha de nacimiento: {{medico.fechadenacimiento}}</li>
+                <li>ID: {{medico.id}}</li>
+                <li>Direccion: {{medico.direccion}}</li>
+                <li>Ciudad: {{medico.ciudad}}</li>
+                <li>Email: {{medico.email}}</li>
+                <li>Profesion: {{medico.profesion}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+</body>
+</html>
+{% endblock %}
