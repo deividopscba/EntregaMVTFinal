@@ -21,3 +21,10 @@ class Medico(models.Model):
     ciudad = models.CharField(max_length=40)
     email = models.EmailField()
     profesion = models.CharField(max_length=40)
+
+class HistoriaClinica(models.Model):
+    id_historia = models.IntegerField(primary_key=True)
+    nombre_pac = models.CharField(max_length=40)
+    apellido_pac = models.CharField(max_length=40)
+    fecha_hist = models.DateField()
+    diagnostico = models.CharField(max_length=200)

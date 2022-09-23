@@ -1,0 +1,19 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+    <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %}
+    <title>Formulario de HistoriasClinicas</title>
+
+    <h1>Formulario de Historias Clinicas</h1>
+    {% if formulario.errors %}
+    <p style="color: red">Estan mal</p>
+    {% endif %}
+    <form class="formDataPacientes" action="" method="POST">{% csrf_token %}
+        <table>
+            {{ formulario.as_table }}
+        </table>
+        <button type="submit">Registrar</button>
+    </form>
+    {% endblock %}

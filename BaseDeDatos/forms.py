@@ -20,3 +20,10 @@ class form_medicos(forms.Form):
     ciudad = forms.CharField(max_length=40)
     email = forms.EmailField()
     profesion = forms.CharField(max_length=40)
+
+class form_historiaclinica(forms.Form):
+    id_historia = forms.IntegerField()
+    nombre_pac = forms.CharField(max_length=40)
+    apellido_pac = forms.CharField(max_length=40)
+    fecha_hist = forms.DateField()
+    diagnostico = forms.CharField(max_length=200)

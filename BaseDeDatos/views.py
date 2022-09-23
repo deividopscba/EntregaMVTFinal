@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from BaseDeDatos.models import Paciente, Medico
-from BaseDeDatos.forms import form_pacientes, form_medicos
+from BaseDeDatos.models import Paciente, Medico, HistoriaClinica
+from BaseDeDatos.forms import form_pacientes, form_medicos, form_historiaclinica
 
 # Create your views here.
 
@@ -53,3 +53,15 @@ def buscar_medico(request):
     else:
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
+
+def api_HistoriasClinica(request):
+    if request.method == "POST":
+        formulario = form_historiaclinica(request.POST)
+        if formulario.is_valid():
+            informacion = formulario.cleaned_data
+            historia = HistoriaClinica( id_historia = informacion['id_historia'], nombre_pac = informacion['nombre_pac'], apellido_pac = informacion['apellido_pac'], fecha_hist = informacion['fecha_hist'], diagnostico = informacion['diagnostico'] )
+            historia.save()
+            return render(request, "api_HistoriasClinica.html")
+    else:
+        formulario = form_historiaclinica()
+        return render(request, "api_HistoriasClinica.html", {"formulario": formulario})
