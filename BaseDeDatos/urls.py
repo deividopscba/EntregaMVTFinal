@@ -7,5 +7,9 @@ urlpatterns = [
     path('api_medicos/', api_medicos),
     path('buscar_medico/', buscar_medico),
     path('api_HistoriasClinica/',api_HistoriasClinica),
-    path('buscar_paciente/',buscar_paciente)
+    path('buscar_paciente/',buscar_paciente),
+    path('login/', login_request),
+    path('registro/', registro),
+   
+
 ]
