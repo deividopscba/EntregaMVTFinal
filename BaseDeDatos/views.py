@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from BaseDeDatos.models import Paciente, Medico, HistoriaClinica
 from BaseDeDatos.forms import form_pacientes, form_medicos, form_historiaclinica, UserRegisterForm
@@ -98,8 +98,8 @@ def registro(request):
    if request.method == 'POST':
        form = UserRegisterForm(request.POST)
        if form.is_valid():
-         form.save()
-         return redirect("/login")
+        form.save()
+        return redirect("/BaseDeDatos/login/")
    else:
       form = UserRegisterForm()
       return render(request, 'registro.html', {'form':form})
