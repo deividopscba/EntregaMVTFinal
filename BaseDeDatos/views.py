@@ -103,3 +103,6 @@ def registro(request):
    else:
       form = UserRegisterForm()
       return render(request, 'registro.html', {'form':form})
+
+def about(request):
+    return render(request, "about.html")
