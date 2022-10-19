@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de nosotros</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "inicio.html" %}
+
+{% load static %}
+    <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %}
+    <title>Acerca de Nosotros</title>
+
+    <h1>Acerca de Nosotros</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    Consectetur necessitatibus tempore est minus? Dolorem quidem nemo esse aliquam molestias earum delectus odio ipsa dolorum corporis aperiam facilis, harum autem hic.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur quis exercitationem porro recusandae nihil, 
+    libero consequuntur asperiores perferendis qui quisquam sed laudantium vitae eveniet adipisci ex. Reprehenderit provident accusantium minus?</p>
+    {% endblock %}
