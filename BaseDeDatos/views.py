@@ -14,7 +14,6 @@ from django.contrib.auth.decorators import login_required
 @login_required
 def inicio(request):
     return render(request, "inicio.html")
-
 @login_required
 def api_pacientes(request):
     if request.method == "POST":
@@ -29,7 +28,7 @@ def api_pacientes(request):
     else:
         formulario=form_pacientes()
     return render(request, "api_pacientes.html", {"formulario": formulario})
-
+@login_required
 def buscar_paciente(request):
     if request.GET["id"]:
         id = request.GET["id"]
@@ -38,7 +37,6 @@ def buscar_paciente(request):
     else:
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
-
 @login_required
 def api_medicos(request):
     if request.method == "POST":
@@ -53,7 +51,7 @@ def api_medicos(request):
     else:
         formulario=form_medicos()
     return render(request, "api_medicos.html", {"formulario": formulario})
-
+@login_required
 def buscar_medico(request):
     if request.GET["id"]:
         id = request.GET["id"]
@@ -62,7 +60,6 @@ def buscar_medico(request):
     else:
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
-
 @login_required
 def api_HistoriasClinica(request):
     if request.method == "POST":
@@ -91,7 +88,6 @@ def login_request(request):
             return render(request, "inicio.html")
          else:
             return render (request, "login.html", {'form':form})
-           
       else:
          return render (request, "login.html", {'form':form})    
 
@@ -111,4 +107,48 @@ def registro(request):
 def about(request):
     return render(request, "about.html")
 
+def create_pacientes(request):
+    if request.method == 'POST':
+        paciente = Paciente(nombre = request.POST['nombre'], apellido = request.POST['apellido'], edad = request.POST['edad'],
+        fechadenacimiento = request.POST['fechadenacimiento'], id = request.POST['id'], direccion = request.POST['direccion'],
+        ciudad = request.POST['ciudad'], email = request.POST['email'])
+        paciente.save()
+        pacientes = Paciente.objects.all()
+        return render(request, "CRUD/read_pacientes.html", {"pacientes": pacientes})
+    return render(request, "CRUD/create_pacientes.html")
 
+def read_pacientes(request=None):
+    pacientes = Paciente.objects.all()
+    return render(request, "CRUD/read_pacientes.html", {"pacientes": pacientes})
+
+def update_pacientes(request, paciente_id):
+    paciente = Paciente.objects.get(id = paciente_id)
+
+    if request.method == 'POST':
+        formulario = form_pacientes(request.POST)
+
+        if formulario.is_valid():
+            informacion = formulario.cleaned_data
+            paciente.nombre = informacion['nombre']
+            paciente.apellido = informacion['apellido']
+            paciente.edad = informacion['edad']
+            paciente.fechadenacimiento = informacion['fechadenacimiento']
+            paciente.id = informacion['id']
+            paciente.direccion= informacion['direccion']
+            paciente.ciudad = informacion['ciudad']
+            paciente.email = informacion['email']
+            paciente.save()
+            pacientes = Paciente.objects.all()
+            return render(request, "CRUD/read_pacientes.html", {"pacientes": pacientes})
+    else:
+        formulario = form_pacientes(initial={'nombre': paciente.nombre, 'apellido': paciente.apellido, 'edad': paciente.edad,
+        'fechadenacimiento': paciente.fechadenacimiento, 'id': paciente.id, 'direccion': paciente.direccion,
+        'ciudad': paciente.ciudad,'email': paciente.email})
+    return render(request,"CRUD/update_pacientes.html", {"formulario": formulario})
+
+def delete_pacientes(request, paciente_id):
+    paciente = Paciente.objects.get(id =  paciente_id)
+    paciente.delete()
+
+    pacientes = Paciente.objects.all()    
+    return render(request, "CRUD/read_pacientes.html", {"pacientes": pacientes})

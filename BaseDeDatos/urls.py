@@ -13,6 +13,8 @@ urlpatterns = [
     path('registro/', registro),
     path('logout/', LogoutView.as_view(template_name = 'inicio.html'), name="Logout" ),
     path('about/', about),
-
-
+    path('create_pacientes/', create_pacientes),
+    path('read_pacientes/', read_pacientes),
+    path('update_pacientes/', update_pacientes),
+    path('delete_pacientes/', delete_pacientes),
 ]
