@@ -15,6 +15,7 @@ from django.contrib.auth.decorators import login_required
 def inicio(request):
     return render(request, "inicio.html")
 
+@login_required
 def api_pacientes(request):
     if request.method == "POST":
         formulario = form_pacientes(request.POST)
@@ -38,6 +39,7 @@ def buscar_paciente(request):
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
 
+@login_required
 def api_medicos(request):
     if request.method == "POST":
         formulario = form_medicos(request.POST)
@@ -61,6 +63,7 @@ def buscar_medico(request):
         respuesta = "No enviaste datos"
     return HttpResponse(respuesta)
 
+@login_required
 def api_HistoriasClinica(request):
     if request.method == "POST":
         formulario = form_historiaclinica(request.POST)
@@ -88,6 +91,7 @@ def login_request(request):
             return render(request, "inicio.html")
          else:
             return render (request, "login.html", {'form':form})
+           
       else:
          return render (request, "login.html", {'form':form})    
 
@@ -106,3 +110,5 @@ def registro(request):
 
 def about(request):
     return render(request, "about.html")
+
+
