@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+    <title>Base De Datos</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/BaseDeDatos/inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/BaseDeDatos/api_pacientes">Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/BaseDeDatos/api_medicos">Medicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/BaseDeDatos/api_HistoriasClinica">Historias Clinicas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/BaseDeDatos/create_pacientes">Crear Paciente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/BaseDeDatos/read_pacientes">Lista de Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"
+                                href="/BaseDeDatos/about">Acerca de Nosotros</a>
+                        </li>
+                        <li class="nav-item" style="position: absolute; right: 0px">
+                            <a class="nav-link active" aria-current="page" href="/BaseDeDatos/logout">Salir</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="contenido1 animate__animated animate__bounce">
+        {% block contenido %}
+        <p>Esta es la base de datos para poder registrar pacientes, medicos e historias clinicas</p>
+        {% endblock %}
+    </div>
+    <!-- <footer>
+        <p>Todos los derechos reservados a los alumnos de coder house</p>
+    </footer> -->
+</body>
+
+</html>

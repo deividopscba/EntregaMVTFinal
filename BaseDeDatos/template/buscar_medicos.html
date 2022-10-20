@@ -1,0 +1,21 @@
+{% extends "inicio.html" %}
+
+{% block contenido %}
+        <div>
+            {% if medicos %}
+            <ul>
+                {% for medico in medicos %}
+                <li>Nombre: {{medico.nombre}}</li>
+                <li>Apellido: {{medico.apellido}}</li>
+                <li>Edad: {{medico.edad}}</li>
+                <li>Fecha de nacimiento: {{medico.fechadenacimiento}}</li>
+                <li>ID: {{medico.id}}</li>
+                <li>Direccion: {{medico.direccion}}</li>
+                <li>Ciudad: {{medico.ciudad}}</li>
+                <li>Email: {{medico.email}}</li>
+                <li>Profesion: {{medico.profesion}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+{% endblock %}

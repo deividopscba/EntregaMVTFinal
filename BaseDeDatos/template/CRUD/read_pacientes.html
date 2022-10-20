@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %}
+    {% for paciente in pacientes %}
+        <li>
+            {{ paciente }}
+            <a href="/BaseDeDatos/update_pacientes/{{paciente.id}}" class="btn btn-warning">Editar</a>
+            <a href="/BaseDeDatos/delete_pacientes/{{paciente.id}}" class="btn btn-danger">Borrar</a>
+        </li>
+        <br>
+    {% endfor %}
+    <a class="btn btn-success" href="/BaseDeDatos/create_pacientes">Agregar Nuevo Paciente</a>
+{% endblock %}

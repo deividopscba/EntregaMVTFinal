@@ -1,0 +1,44 @@
+{% extends "inicio.html" %}
+
+{% load static %}
+    <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %}
+    <p>Base de datos de medicos</p>
+    <div class="contenidoMedicos">
+        <form class="formDataMedicos" action="/BaseDeDatos/api_medicos/" method="POST"> {% csrf_token %}
+            <input type="text" name = "Nombre" placeholder="Nombre">
+            <input type="text" name = "Apellido" placeholder="Apellido">
+            <input type="number" name = "Edad" placeholder="Edad">
+            <input type="date" name = "Fecha de nacimiento" placeholder="Fecha de nacimiento">
+            <input type="number" name = "ID" placeholder="ID">
+            <input type="text" name = "Direccion" placeholder="Direccion">
+            <input type="text" name = "Ciudad" placeholder="Ciudad">
+            <input type="email" name = "Email" placeholder="Email">
+            <input type="text" name = "Profesion" placeholder="Profesion">
+            <button type="submit" class="btn btn-primary btndj">Registrar</button>
+        </form>
+    </div>
+    <div>
+        <form class="formDataMedicos" action="/BaseDeDatos/buscar_medicos/" method="GET">
+            <input type="number" name = "ID" placeholder="ID">
+            <button type="submit" class="btn btn-primary btndj">Buscar</button>
+    </div>
+    <div>
+        {% if medicos %}
+        <ul>
+            {% for medico in medicos %}
+            <li>{{medico.nombre}}</li>
+            <li>{{medico.apellido}}</li>
+            <li>{{medico.edad}}</li>
+            <li>{{medico.fechadenacimiento}}</li>
+            <li>{{medico.id}}</li>
+            <li>{{medico.direccion}}</li>
+            <li>{{medico.ciudad}}</li>
+            <li>{{medico.email}}</li>
+            <li>{{medico.profesion}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+{% endblock %}

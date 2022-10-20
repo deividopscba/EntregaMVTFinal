@@ -1,0 +1,18 @@
+{% extends "inicio.html" %}
+{% block contenido %}
+    <h1>Base de datos Pacientes</h1>
+    {% if formulario.errors %}
+    <p style="color:red;">Estan mal los datos, revisar</p>
+    {% endif %}
+    <form class= "form1" method="POST">{% csrf_token %}
+        <table>
+            {{ formulario.as_table }}
+        </table>
+        <button type="submit">Registrar</button>
+    </form>
+    <div>
+        <form class="formDataPacientes" action="/BaseDeDatos/buscar_paciente/" method="GET">
+            <input type="number" name = "id" placeholder="ID">
+            <button type="submit" class="btn btn-primary btndj">Buscar</button>
+    </div>
+{% endblock %}

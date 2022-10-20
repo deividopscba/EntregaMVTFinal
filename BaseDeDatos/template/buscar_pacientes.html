@@ -1,0 +1,19 @@
+{% extends "inicio.html" %}
+{% block contenido %}
+        <div>
+            {% if pacientes %}
+            <ul>
+                {% for paciente in pacientes %}
+                <li>Nombre: {{paciente.nombre}}</li>
+                <li>Apellido: {{paciente.apellido}}</li>
+                <li>Edad: {{paciente.edad}}</li>
+                <li>Fecha de nacimiento: {{paciente.fechadenacimiento}}</li>
+                <li>ID: {{paciente.id}}</li>
+                <li>Direccion: {{paciente.direccion}}</li>
+                <li>Ciudad: {{paciente.ciudad}}</li>
+                <li>Email: {{paciente.email}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+{% endblock %}
