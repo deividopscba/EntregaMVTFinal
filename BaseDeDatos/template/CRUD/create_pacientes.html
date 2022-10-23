@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
 <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
 
-<form class="form_pacientes" method="POST" action="/BaseDeDatos/create_pacientes">{% csrf_token %}
+<form class="form_pacientes" method="POST" action="/BaseDeDatos/create_pacientes/">{% csrf_token %}
     <input type="text" name="nombre" placeholder="Nombre">
     <input type="text" name="apellido" placeholder="Apellido">
     <input type="number" name="edad" placeholder="Edad">
@@ -11,5 +11,5 @@
     <input type="text" name="direccion" placeholder="Direccion">
     <input type="text" name="ciudad" placeholder="ciudad">
     <input type="email" name="email" placeholder="email">
-    <button type="button" class="btn btn-success">Agregar Nuevo Paciente</button>
+    <button type="submit" class="btn btn-success">Agregar Nuevo Paciente</button>
 </form>
