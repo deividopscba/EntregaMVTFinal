@@ -4,6 +4,7 @@
     {% for paciente in pacientes %}
         <li>
             {{ paciente }}
+            <li>{{paciente.id}}</li>
             <a href="/BaseDeDatos/update_pacientes/{{paciente.id}}" class="btn btn-warning">Editar</a>
             <a href="/BaseDeDatos/delete_pacientes/{{paciente.id}}" class="btn btn-danger">Borrar</a>
         </li>
