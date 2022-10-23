@@ -1,15 +1,19 @@
-{% load static %}
+{% extends "inicio.html" %}
+{% block contenido %}
+<!--{% load static %}-->
 <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
 <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
 
-<form class="form_pacientes" method="POST" action="/BaseDeDatos/create_pacientes/">{% csrf_token %}
-    <input type="text" name="nombre" placeholder="Nombre">
-    <input type="text" name="apellido" placeholder="Apellido">
-    <input type="number" name="edad" placeholder="Edad">
-    <input type="date" name="fechadenacimiento" placeholder="DOB">
-    <input type="number" name="id" placeholder="ID">
-    <input type="text" name="direccion" placeholder="Direccion">
-    <input type="text" name="ciudad" placeholder="ciudad">
-    <input type="email" name="email" placeholder="email">
+<form class= "form1" method="POST" action="/BaseDeDatos/create_pacientes/">{% csrf_token %}
+    <input type="text" name="nombre" placeholder="Nombre"><br>
+    <input type="text" name="apellido" placeholder="Apellido"> <br>
+    <input type="number" name="edad" placeholder="Edad"><br>
+    <input type="date" name="fechadenacimiento" placeholder="DOB"> <br>
+    <input type="number" name="id" placeholder="ID"><br>
+    <input type="text" name="direccion" placeholder="Direccion"> <br>
+    <input type="text" name="ciudad" placeholder="ciudad"> <br>
+    <input type="email" name="email" placeholder="email"> <br>
     <button type="submit" class="btn btn-success">Agregar Nuevo Paciente</button>
 </form>
+
+{% endblock %}
