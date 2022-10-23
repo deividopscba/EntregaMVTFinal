@@ -16,5 +16,5 @@ urlpatterns = [
     path('create_pacientes/', create_pacientes),
     path('read_pacientes/', read_pacientes),
     path('update_pacientes/<paciente_id>', update_pacientes),
-    path('delete_pacientes/', delete_pacientes),
+    path('delete_pacientes/<paciente_id>', delete_pacientes),
 ]
