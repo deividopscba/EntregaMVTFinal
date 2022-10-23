@@ -106,7 +106,7 @@ def registro(request):
 
 def about(request):
     return render(request, "about.html")
-
+@login_required
 def create_pacientes(request):
     if request.method == 'POST':
         paciente = Paciente(nombre = request.POST['nombre'], apellido = request.POST['apellido'], edad = request.POST['edad'],
@@ -116,7 +116,7 @@ def create_pacientes(request):
         pacientes = Paciente.objects.all()
         return render(request, "CRUD/read_pacientes.html", {"pacientes": pacientes})
     return render(request, "CRUD/create_pacientes.html")
-
+@login_required
 def read_pacientes(request=None):
     pacientes = Paciente.objects.all()
     return render(request, "CRUD/read_pacientes.html", {"pacientes": pacientes})

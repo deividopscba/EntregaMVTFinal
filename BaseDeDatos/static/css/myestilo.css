@@ -27,7 +27,6 @@ header .navbar .collapse .navbar-nav .nav-item :hover{
 }
 .contenido1{
     margin: 100px 200px;
-    border: 1px  solid royalblue;
 }
 .contenido1 p, h1{
     display: flex;
