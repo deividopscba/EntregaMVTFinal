@@ -2,13 +2,27 @@
 <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
 {% block contenido %}
     {% for paciente in pacientes %}
-        <li>
-            {{ paciente }}
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{paciente.nombre}} {{paciente.apellido}}</h5>
+          <p class="card-text">Edad: {{paciente.edad}}</p>
+          <p class="card-text">Direccion: {{paciente.direccion}}</p>
+          <p class="card-text">Email: {{paciente.email}}</p>
+          <a href="/BaseDeDatos/update_pacientes/{{paciente.id}}" class="btn btn-warning">Editar</a>
+          <a href="/BaseDeDatos/delete_pacientes/{{paciente.id}}" class="btn btn-danger">Borrar</a>
+        </div>
+      </div>
+      <br>
+        <!--<li>
             <li>{{paciente.id}}</li>
+            <li>{{paciente.nombre}}</li>
+            <li>{{paciente.apellido}}</li>
+            <li>{{paciente.edad}}</li>
             <a href="/BaseDeDatos/update_pacientes/{{paciente.id}}" class="btn btn-warning">Editar</a>
             <a href="/BaseDeDatos/delete_pacientes/{{paciente.id}}" class="btn btn-danger">Borrar</a>
         </li>
-        <br>
+        <br>-->
     {% endfor %}
     <a class="btn btn-success" href="/BaseDeDatos/create_pacientes">Agregar Nuevo Paciente</a>
 {% endblock %}

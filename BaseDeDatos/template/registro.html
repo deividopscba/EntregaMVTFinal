@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-</head>
-<body>
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %}
+<div class="contenidoPacientes">
     <form method="POST"> {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">Registrarse</button>
+        <button class="btn btn-Primary" type="submit">Registrarse</button>
     </form>
-
-</body>
-</html>
+</div>
+  
+{% endblock %}
