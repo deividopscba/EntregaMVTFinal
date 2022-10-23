@@ -1,9 +1,13 @@
 {% load static %}
 <link rel="stylesheet" href="{%static 'css/myestilo.css'%}">
 <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
-{% block contenido %}
+{% block contenido %} 
+
 <div class="contenidoPacientes">
+   
     <form method="POST"> {% csrf_token %}
+        <h2>Registro de usuarios</h2>
+        <br>
         {{form.as_p}}
         <button class="btn btn-Primary" type="submit">Registrarse</button>
     </form>
